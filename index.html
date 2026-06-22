@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System </title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!--Navigation-->
+    <div class="navbar">
+        <a href="#form">Registration Form</a>
+        <a href="#record">Student Record</a>
+        <a href="#audio">Audio</a>
+        <a href="#video">Video</a>
+    </div>
+
+    <!--Header-->
+    <h1>Student Registration Portal </h1>
+
+    <p>Welcome to the Student Registration Portal. Student can register themselves and view records.</p>
+    
+    <!--Profile Image-->
+    <img src="profile.png" alt="Student Image " width="150">
+
+    <h2 id=""form> Student Registration Form</h2>
+
+    <form>
+        <fieldset>
+    <legend>Personal Information</legend>
+
+    <label>Full Name:</label>
+    <input type="text"><br><br>
+
+    <label>Email Address:</label>
+    <input type="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password"><br><br>
+
+    <label>Age:</label>
+    <input type="number"><br><br>
+
+    <label>Date of Birth:</label>
+    <input type="date"><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+    <input type="radio" name="gender"> Other
+
+    <br><br>
+
+    <label>Skills:</label><br>
+
+    <input type="checkbox"> HTML <br>
+    <input type="checkbox"> CSS <br>
+    <input type="checkbox"> JavaScript <br>
+    <input type="checkbox"> React
+
+    <br><br>
+
+    <label>Upload Resume:</label>
+    <input type="file">
+
+    <br><br>
+
+    <button type="submit">Register Student</button>
+
+</fieldset>
+        
+    </form>
+    <!--Tabel-->
+    <h2 id=""records>Student Record</h2>
+
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>City</th>
+            <th>Email</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Ayush Verma</td>
+            <td>BCA</td>
+            <td>Delhi</td>
+            <td>ayushverma@gmail.com</td>
+        </tr>
+
+         <tr>
+            <td>102</td>
+            <td>Bhanu Gautam</td>
+            <td>BBA</td>
+            <td>Noida</td>
+            <td>Bhanugt@gmail.com</td>
+        </tr>
+
+         <tr>
+            <td>103</td>
+            <td>Chetan Sharma</td>
+            <td>B.Com</td>
+            <td>Palwal</td>
+            <td>Chetansharma@gmail.com</td>
+        </tr>
+
+         <tr>
+            <td>104</td>
+            <td>Dhreej Singh</td>
+            <td>B.tech</td>
+            <td>Agra</td>
+            <td>Dhreejsingh@gmail.com</td>
+        </tr>
+
+        <tr>
+            <td>105</td>
+            <td>Eshan Mehra</td>
+            <td>B.tech</td>
+            <td>Hisar</td>
+            <td>Eshan25@gmail.com</td>
+        </tr>
+
+    </table>
+
+    <!--Audio-->
+    <h2 id ="audio">Welcome Audio Message</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support audio.
+    </audio>
+
+    <!--Video-->
+    <h2 id="video">Introduction Video</h2>
+
+    <video width="500" controls>
+        <source src="welcome.mp4" type="video/mp4"> 
+        Your browser does not support video
+    </video>
+
+
+</body>
+</html>

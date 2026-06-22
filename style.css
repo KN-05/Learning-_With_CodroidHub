@@ -1,0 +1,94 @@
+body {
+    background-color: #f0f8ff;
+    color: black;
+    font-family: Arial;
+    font-size: 16px;
+    margin: 20px;
+    padding: 20px;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: green;
+}
+
+.navbar {
+    background-color: lightblue;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: blue;
+    font-weight: bold;
+}
+
+fieldset {
+    border: 2px solid blue;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+th {
+    background-color: lightgreen;
+    color: black;
+    padding: 12px;
+    border: 1px solid black;
+}
+
+label{
+    display: inline-block;
+    width: 130px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"]{
+    width: 200px;
+    padding: 5px;
+}
+
+fieldset{
+    border: 2px solid blue;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+img {
+    border-radius: 50%;
+    margin-top: 10px;
+}
