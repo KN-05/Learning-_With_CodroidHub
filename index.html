@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ledger — Student Management Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark">SM</span>
+        <div class="brand-text">
+          <span class="brand-name">Ledger</span>
+          <span class="brand-sub">Student Management</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#students">Students</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow">Term II · Academic Year 2026</p>
+        <h1>Welcome to the Student Management Dashboard</h1>
+        <p class="hero-desc">Manage student records, monitor performance, and track course progress — all ruled up in one ledger.</p>
+        <a href="#reports" class="btn-primary">View Reports</a>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <span class="hero-card-label">Class Average</span>
+        <span class="hero-card-value" id="heroAverage">--%</span>
+        <span class="hero-card-foot">Updated automatically from live records</span>
+      </div>
+    </section>
+
+    <section class="stats" id="stats" aria-label="Student statistics">
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-tag">01</span>
+          <span class="stat-value" id="statTotalStudents">0</span>
+          <span class="stat-label">Total Students</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-tag">02</span>
+          <span class="stat-value" id="statTotalCourses">0</span>
+          <span class="stat-label">Total Courses</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-tag">03</span>
+          <span class="stat-value" id="statAvgPercentage">0%</span>
+          <span class="stat-label">Average Percentage</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-tag">04</span>
+          <span class="stat-value" id="statPassPercentage">0%</span>
+          <span class="stat-label">Pass Percentage</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="students" id="students">
+      <div class="section-head">
+        <h2>Student Records</h2>
+        <p>Marks, percentages, and results — generated live from the class register.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="studentTable">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Course</th>
+              <th>Marks</th>
+              <th>Percentage</th>
+              <th>Result</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            <!-- Rows injected by script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="section-head">
+        <h2>Courses in Session</h2>
+        <p>Every course currently being tracked in the ledger this term.</p>
+      </div>
+      <ul class="course-chips" id="courseChips">
+        <!-- Chips injected by script.js -->
+      </ul>
+    </section>
+
+    <section class="reports" id="reports">
+      <div class="section-head">
+        <h2>Reports</h2>
+        <p>Console-logged for the record. Open your browser console to see the full printout for every student.</p>
+      </div>
+      <div class="reports-note">
+        <p>Each entry below mirrors what's written to <code>console.log()</code>: name, total marks, percentage, result, and grade.</p>
+        <pre id="reportsPreview" class="reports-preview">Loading…</pre>
+      </div>
+    </section>
+
+
+    <section class="about" id="about">
+      <div class="about-text">
+        <p class="eyebrow">The Program</p>
+        <h2>Full-Stack Web Development Diploma</h2>
+        <p>A one-year, project-based diploma covering HTML5, CSS3, responsive design, and JavaScript fundamentals — through to backend systems and deployment. Cohorts are kept small so every student's progress fits on one page of the ledger.</p>
+        <ul class="about-facts">
+          <li><span>Duration</span>12 months</li>
+          <li><span>Format</span>Hybrid · in-person &amp; online</li>
+          <li><span>Cohort size</span>32 students</li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="images/program.svg" alt="Students collaborating around a laptop during a lab session" />
+      </div>
+    </section>
+  </main>
+
+ 
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">SM</span>
+        <div class="brand-text">
+          <span class="brand-name">Ledger</span>
+          <span class="brand-sub">Student Management</span>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact the Registrar's Office</h3>
+        <p>registrar@ledger-edu.example</p>
+        <p>+91 98765 43210</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#students">Students</a>
+        <a href="#courses">Courses</a>
+        <a href="#reports">Reports</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Ledger Student Management Dashboard. Built for Assignment 9.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
