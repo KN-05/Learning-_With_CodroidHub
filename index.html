@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khush Nagpal — AI &amp; Data Science Student / Backend Developer</title>
+<meta name="description" content="Portfolio of Khush Nagpal — AI & Data Science student, backend developer and machine learning enthusiast. Projects, skills and coding profiles.">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mark">KN<span style="color:var(--blue-400)">.</span></div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- Ambient background -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <svg class="ribbon ribbon-tr" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ribbonGradTR" x1="0" y1="0" x2="0.6" y2="1">
+          <stop offset="0%" stop-color="#bcd8ff"/>
+          <stop offset="45%" stop-color="#3f74e6"/>
+          <stop offset="100%" stop-color="#0c1c52"/>
+        </linearGradient>
+        <filter id="ribbonBlurTR" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="1.4"/>
+        </filter>
+      </defs>
+      <path d="M340,-20 C300,60 410,110 350,195 C295,272 185,250 150,330" stroke="url(#ribbonGradTR)" stroke-width="50" stroke-linecap="round" filter="url(#ribbonBlurTR)"/>
+      <path d="M336,-24 C296,56 406,106 346,191 C291,268 181,246 146,326" stroke="rgba(255,255,255,0.32)" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+
+    <svg class="ribbon ribbon-bl" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ribbonGradBL" x1="1" y1="1" x2="0.4" y2="0">
+          <stop offset="0%" stop-color="#bcd8ff"/>
+          <stop offset="45%" stop-color="#3f74e6"/>
+          <stop offset="100%" stop-color="#0c1c52"/>
+        </linearGradient>
+        <filter id="ribbonBlurBL" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="1.4"/>
+        </filter>
+      </defs>
+      <path d="M60,440 C100,360 -10,310 50,225 C105,148 215,170 250,90" stroke="url(#ribbonGradBL)" stroke-width="46" stroke-linecap="round" filter="url(#ribbonBlurBL)"/>
+      <path d="M64,436 C104,356 -6,306 54,221 C109,144 219,166 254,86" stroke="rgba(255,255,255,0.3)" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+
+    <div class="grain"></div>
+  </div>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Khush<span>.</span>Nagpal</a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <span class="nav-pill" id="navPill" aria-hidden="true"></span>
+          <li><a href="#home" class="nav-link active" data-nav="home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+          <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-nav="projects">Projects</a></li>
+          <li><a href="#experience" class="nav-link" data-nav="experience">Experience</a></li>
+          <li><a href="#coding-profiles" class="nav-link" data-nav="coding-profiles">Coding Profiles</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal="left">
+          <span class="eyebrow">Welcome to my portfolio</span>
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">Khush <span class="grad">Nagpal</span></h1>
+          <p class="hero-role"><span id="typedRole"></span><span class="cursor-caret" id="typedCaret"></span></p>
+          <p class="hero-desc">I build clean, scalable backend systems and explore how machine learning can make software smarter. Currently sharpening my data structures &amp; algorithms while shipping full-stack projects with the MERN ecosystem.</p>
+
+          <div class="hero-cta">
+            <a href="assets/resume.pdf" class="btn btn-primary magnetic" download data-cta>
+              Download Resume
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            </a>
+            <a href="#projects" class="btn btn-ghost magnetic" data-cta>View Projects</a>
+            <a href="#contact" class="btn btn-ghost magnetic" data-cta>Contact Me</a>
+          </div>
+
+          <div class="hero-socials" id="heroSocials"></div>
+        </div>
+
+        <div class="hero-visual" data-reveal="right">
+          <div class="orbit-ring r1"></div>
+          <div class="orbit-ring r2" id="orbitRing2"></div>
+          <div class="profile-frame">
+            <div class="profile-frame-inner">
+              <img id="profileImg" src="assets/images/profile.png" alt="Photo of Khush Nagpal" onerror="this.src='https://placehold.co/320x320/0d1326/8fb4ff?text=Khush+Nagpal'">
+            </div>
+            <span class="glow-dot d1"></span>
+            <span class="glow-dot d2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue"><span class="mouse"></span>SCROLL</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">About me</span>
+          <h2>Building software with curiosity and precision</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" data-reveal="left">
+            <p>I'm an AI &amp; Data Science student who enjoys the two ends of software: designing dependable backend systems and teaching models to find patterns in data. That mix keeps me equally comfortable in a terminal and a Jupyter notebook.</p>
+            <p>Outside of coursework, I spend my time solving DSA problems, contributing to small backend projects, and picking apart how modern web apps are structured — from the database schema up to the UI.</p>
+            <div class="about-points">
+              <div class="about-point"><span class="dot"></span>Backend Development</div>
+              <div class="about-point"><span class="dot"></span>Machine Learning</div>
+              <div class="about-point"><span class="dot"></span>Problem Solving &amp; DSA</div>
+              <div class="about-point"><span class="dot"></span>Modern Web Development</div>
+            </div>
+          </div>
+
+          <div class="stat-grid" data-reveal="right" id="statGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">Skills</span>
+          <h2>Tools I use to bring ideas to life</h2>
+        </div>
+
+        <div class="skills-tabs" id="skillsTabs" data-reveal="up"></div>
+        <div class="skills-grid" id="skillsGrid"></div>
+
+        <div class="marquee-wrap" data-reveal="up">
+          <div class="marquee" id="marqueeTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">Featured work</span>
+          <h2>Projects I've built and shipped</h2>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / TIMELINE -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">Journey</span>
+          <h2>Education &amp; experience timeline</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- CODING PROFILES -->
+    <section id="coding-profiles">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">Coding profiles</span>
+          <h2>Where I practice &amp; ship code</h2>
+        </div>
+        <div class="profiles-grid" id="profilesGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Let's build something together</h2>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form glass" id="contactForm" data-reveal="left">
+            <div class="field">
+              <input type="text" id="cName" placeholder=" " required>
+              <label for="cName">Name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="cEmail" placeholder=" " required>
+              <label for="cEmail">Email</label>
+            </div>
+            <div class="field">
+              <input type="text" id="cSubject" placeholder=" " required>
+              <label for="cSubject">Subject</label>
+            </div>
+            <div class="field">
+              <textarea id="cMessage" placeholder=" " required></textarea>
+              <label for="cMessage">Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary magnetic" style="width:100%">Send Message</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+
+          <div class="contact-info" data-reveal="right">
+            <div class="info-card glass">
+              <div class="info-icon">✉️</div>
+              <div><h4>Email</h4><p id="infoEmail"></p></div>
+            </div>
+            <div class="info-card glass">
+              <div class="info-icon">📱</div>
+              <div><h4>Phone</h4><p id="infoPhone"></p></div>
+            </div>
+            <div class="info-card glass">
+              <div class="info-icon">📍</div>
+              <div><h4>Location</h4><p id="infoLocation"></p></div>
+            </div>
+            <div class="contact-socials" id="contactSocials"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,40 C240,100 480,0 720,40 C960,80 1200,10 1440,50 L1440,100 L0,100 Z" fill="var(--bg-1)"></path></svg>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Khush Nagpal. All rights reserved.</p>
+      <p>Designed &amp; built with HTML, CSS &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
