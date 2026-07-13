@@ -1,9 +1,3 @@
-/* =========================================================
-   KHUSH NAGPAL — PORTFOLIO SCRIPT
-   Edit the CONFIG object below to update every piece of
-   content on the site. Nothing else needs to be touched.
-   ========================================================= */
-
 const CONFIG = {
   name: "Khush Nagpal",
   role: "AI & Data Science Student",
@@ -101,7 +95,7 @@ const CONFIG = {
   ]
 };
 
-/* ========================================================= */
+
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -127,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCounters();
 });
 
-/* ---------- Theme ---------- */
+
 function initTheme() {
   const saved = localStorage.getItem("kn-theme");
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -150,7 +144,6 @@ function updateThemeIcon(theme) {
     : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
 }
 
-/* ---------- Loader ---------- */
 function initLoader() {
   window.addEventListener("load", () => {
     setTimeout(() => document.getElementById("loader").classList.add("hidden"), 500);
@@ -158,7 +151,7 @@ function initLoader() {
   setTimeout(() => document.getElementById("loader").classList.add("hidden"), 2200);
 }
 
-/* ---------- Icons for socials ---------- */
+
 const SOCIAL_ICONS = {
   github: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 3.2 5.4 3.5 5.4 3.5a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>',
   linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg>',
@@ -180,7 +173,6 @@ function renderSocials() {
   document.getElementById("contactSocials").innerHTML = contactLinks.map(l => `<a class="social-btn magnetic" href="${l.url}" target="_blank" rel="noopener" aria-label="${l.key}">${SOCIAL_ICONS[l.key]}</a>`).join("");
 }
 
-/* ---------- Stats (About) ---------- */
 function renderStats() {
   const html = CONFIG.stats.map(s => `
     <div class="stat-card glass" data-reveal="zoom">
@@ -190,7 +182,7 @@ function renderStats() {
   document.getElementById("statGrid").innerHTML = html;
 }
 
-/* ---------- Skills ---------- */
+
 function renderSkills() {
   const cats = Object.keys(CONFIG.skillCategories);
   const tabsHTML = ['<button class="skill-tab active" data-cat="All">All</button>']
@@ -225,13 +217,12 @@ function renderSkills() {
   });
 }
 
-/* ---------- Marquee ---------- */
 function renderMarquee() {
   const items = CONFIG.marqueeItems.concat(CONFIG.marqueeItems); // duplicate for seamless loop
   document.getElementById("marqueeTrack").innerHTML = items.map(i => `<div class="marquee-item glass"><span class="ic">◆</span>${i}</div>`).join("");
 }
 
-/* ---------- Projects ---------- */
+
 function renderProjects() {
   const html = CONFIG.projects.map(p => `
     <article class="project-card glass" data-reveal="up">
@@ -249,7 +240,7 @@ function renderProjects() {
   document.getElementById("projectsGrid").innerHTML = html;
 }
 
-/* ---------- Timeline ---------- */
+
 function renderTimeline() {
   const html = CONFIG.timeline.map(t => `
     <div class="tl-item" data-reveal="up">
@@ -261,7 +252,7 @@ function renderTimeline() {
   document.getElementById("timeline").innerHTML = html;
 }
 
-/* ---------- Coding Profiles ---------- */
+
 function renderProfiles() {
   const html = CONFIG.codingProfiles.map(p => `
     <div class="profile-card glass" data-reveal="up">
@@ -273,14 +264,14 @@ function renderProfiles() {
   document.getElementById("profilesGrid").innerHTML = html;
 }
 
-/* ---------- Contact info ---------- */
+
 function renderContactInfo() {
   document.getElementById("infoEmail").textContent = CONFIG.email;
   document.getElementById("infoPhone").textContent = CONFIG.phone;
   document.getElementById("infoLocation").textContent = CONFIG.location;
 }
 
-/* ---------- Navigation ---------- */
+
 function initNav() {
   const navbar = document.getElementById("navbar");
   const navLinks = document.getElementById("navLinks");
@@ -328,7 +319,7 @@ function initNav() {
   setTimeout(() => movePill(document.querySelector(".nav-link.active")), 300);
 }
 
-/* ---------- Typed role animation ---------- */
+
 function initTypedRole() {
   const el = document.getElementById("typedRole");
   const roles = CONFIG.typedRoles;
@@ -350,7 +341,6 @@ function initTypedRole() {
   tick();
 }
 
-/* ---------- Scroll reveal ---------- */
 function initReveal() {
   const els = document.querySelectorAll("[data-reveal]:not(.in-view)");
   const observer = new IntersectionObserver((entries) => {
@@ -364,7 +354,7 @@ function initReveal() {
   }, { threshold: 0.15 });
   els.forEach(el => observer.observe(el));
 
-  // timeline items use in-view too
+  
   document.querySelectorAll(".tl-item").forEach(el => {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { el.classList.add("in-view"); obs.unobserve(el); } });
@@ -373,7 +363,7 @@ function initReveal() {
   });
 }
 
-/* ---------- Counters ---------- */
+
 function initCounters() {
   const counters = document.querySelectorAll(".counter");
   const observer = new IntersectionObserver((entries) => {
@@ -400,7 +390,7 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-/* ---------- Particle background ---------- */
+
 function initParticles() {
   const canvas = document.getElementById("particle-canvas");
   const ctx = canvas.getContext("2d");
@@ -442,7 +432,6 @@ function initParticles() {
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) draw();
 }
 
-/* ---------- Cursor glow (mouse-follow) ---------- */
 function initCursorGlow() {
   const glow = document.getElementById("cursorGlow");
   if (window.matchMedia("(pointer: coarse)").matches) { glow.style.display = "none"; return; }
@@ -451,7 +440,7 @@ function initCursorGlow() {
   });
 }
 
-/* ---------- Magnetic buttons ---------- */
+
 function initMagnetic() {
   document.querySelectorAll(".magnetic").forEach(el => {
     el.addEventListener("mousemove", (e) => {
@@ -463,7 +452,7 @@ function initMagnetic() {
     el.addEventListener("mouseleave", () => { el.style.transform = "translate(0,0)"; });
   });
 
-  // Button ripple
+
   document.querySelectorAll(".btn").forEach(btn => {
     btn.addEventListener("click", function (e) {
       const rect = this.getBoundingClientRect();
@@ -478,7 +467,7 @@ function initMagnetic() {
   });
 }
 
-/* ---------- Tilt cards ---------- */
+
 function initTilt() {
   document.addEventListener("mousemove", (e) => {
     const card = e.target.closest(".tilt");
@@ -495,14 +484,13 @@ function initTilt() {
   });
 }
 
-/* ---------- Back to top ---------- */
+
 function initBackToTop() {
   document.getElementById("backToTop").addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
-/* ---------- Contact form ---------- */
 function initContactForm() {
   const form = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
