@@ -20,7 +20,7 @@ const CONFIG = {
   },
 
   stats: [
-    { label: "LeetCode Problems", value: 200, suffix: "+" },
+    { label: "LeetCode Problems", value: 300, suffix: "+" },
     { label: "Technologies Learned", value: 10, suffix: "+" }
   ],
 
