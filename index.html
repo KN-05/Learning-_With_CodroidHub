@@ -6,6 +6,17 @@
 <title>EMS | Employee Management Dashboard</title>
 <meta name="description" content="A premium employee management dashboard" />
 
+<!-- Apply saved theme before first paint (prevents flash) -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('ems_theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
+
 <!-- Google Font: Poppins -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -77,7 +88,17 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         <input type="text" id="globalSearch" placeholder="Search employees, departments…" />
       </div>
+
+      <button type="button" class="theme-switch" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false" title="Switch theme">
+        <i class="fa-solid fa-sun track-icon sun"></i>
+        <i class="fa-solid fa-moon track-icon moon"></i>
+        <span class="theme-switch-thumb">
+          <i class="fa-solid fa-sun thumb-icon thumb-sun"></i>
+          <i class="fa-solid fa-moon thumb-icon thumb-moon"></i>
+        </span>
+      </button>
     </div>
+    
   </header>
 
   <main class="content">

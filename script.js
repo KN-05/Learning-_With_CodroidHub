@@ -618,6 +618,39 @@
   }
 
   /* ---------------------------------------------------------
+     Theme (dark / light)
+  --------------------------------------------------------- */
+  const THEME_KEY = 'ems_theme';
+
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme, persist) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (persist) {
+      try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    }
+    const btn = $('#themeToggle');
+    if (btn) btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  }
+
+  function initTheme() {
+    // Theme was already applied pre-paint by the inline head script;
+    // just sync the toggle button state and wire up the click handler.
+    applyTheme(getCurrentTheme(), false);
+
+    const btn = $('#themeToggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+      applyTheme(next, true);
+      // Re-render charts so their text/grid colors match the new theme
+      renderCharts();
+    });
+  }
+
+  /* ---------------------------------------------------------
      Navigation
   --------------------------------------------------------- */
   function initNavigation() {
@@ -729,6 +762,7 @@
   function init() {
     loadFromStorage();
 
+    initTheme();
     initPhotoUpload();
     initTableEvents();
     initNavigation();
